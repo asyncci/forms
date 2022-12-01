@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+    {% for post in posts %}
+        <li>    
+            <p>            
+                <h3>{{post.title}}</h3><br>
+                {% if post.image != null %}
+                    <img src="{{post.image.url}}" style="width:90px;height:100px;" alt="">
+                {% endif %}
+                <div>{{post.price}}</div>
+                <a href="{% url 'post' id=post.pk %}">More</a>
+                <a href="{% url 'delete' id=post.pk %}"> DELETE </a>
+                <a href="{% url 'update' pk=post.pk %}"> update </a>
+            </p>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
