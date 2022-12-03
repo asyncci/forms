@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars List</title>
+</head>
+<body>
+
+<center>
+    <ol>    
+    {% for i in object_list %}
+        <li style="border:2px;">
+            <h2>{{i.car_model}}</h2>
+            <h2>{{i.price}}</h2>
+            <h2>{{i.year}}</h2>
+            <img src="{{i.image}}" alt="" width="100" height="83">
+        </li>
+    {% endfor %}
+    </ol>
+</center>
+</body>
+</html>

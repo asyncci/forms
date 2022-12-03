@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parser</title>
+</head>
+<body>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Start Parsing" name="send">
+    <input type="submit" value="Delete" name="send">
+</form>
+
+<button><a href="{% url 'parser:cars_list' %}">CAR LIST</a></button>
+
+</body>
+</html>
